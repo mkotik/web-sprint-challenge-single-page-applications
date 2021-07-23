@@ -1,0 +1,72 @@
+.cardWrapWrap {
+  /* background-color: blue; */
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+  border-bottom: 1px solid black;
+}
+
+.cardWrap {
+  width: 20rem;
+  height: 20rem;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Acme", sans-serif;
+  color: #353535;
+}
+
+.infoWrap {
+  /* background-color: green; */
+  width: 80%;
+}
+.title {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+.summary {
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.imgWrap {
+  width: 80%;
+  aspect-ratio: 1.3;
+  overflow: hidden;
+}
+
+.deliveryInfoWrap {
+  display: flex;
+}
+
+.deliveryTimeWrap,
+.deliveryFeeWrap {
+  background-color: #f2aa4cff;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 5px;
+}
+
+.deliveryFeeWrap {
+  margin-left: 10px;
+}
+
+.deliveryFeeText,
+.deliveryTimeText {
+  /* color: blue; */
+  margin: 0px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
