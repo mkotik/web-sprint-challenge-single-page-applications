@@ -8,7 +8,7 @@ export default function LowerSection() {
   console.log(stores);
   return (
     <div>
-      <h1>Food Delivery in Gotham City</h1>
+      <h1 className="foodDelivTitle">Food Delivery in Gotham City</h1>
       <div className="lowerContentWrap">
         {stores.map((store) => (
           <Card store={store} />

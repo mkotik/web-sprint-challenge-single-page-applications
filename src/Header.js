@@ -5,18 +5,14 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <div className="headerWrap">
-      <h1 className="headerTitle">Lamba Eats</h1>
+      <h1 className="headerTitle">Lambda Eats</h1>
       <nav>
-        <div className="homeBtnWrap">
-          <Link className="homeBtn" to="/">
-            Home
-          </Link>
-        </div>
-        <div className="helpBtnWrap">
-          <Link className="helpBtn" to="/">
-            Help
-          </Link>
-        </div>
+        <Link className="homeBtn" to="/">
+          <div className="homeBtnWrap">Home</div>
+        </Link>
+        <Link className="helpBtn" to="/">
+          <div className="helpBtnWrap">Help</div>
+        </Link>
       </nav>
     </div>
   );

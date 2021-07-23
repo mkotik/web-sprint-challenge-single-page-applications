@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+}
+
+.formBackground {
+  background-color: #ff5964;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Acme", sans-serif;
+}
+.formImgWrap {
+  width: 100%;
+  height: 40vh;
+  background-image: url("./Pizza.jpg");
+  background-size: cover;
+}
+
+.formWrap {
+  background-color: white;
+  width: 40rem;
+}
+
+.formTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formHeader {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+}
+
+.formSubHeader {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.sectionDividerWrap {
+  background-color: rgb(192, 191, 191);
+  padding-left: 2rem;
+}
+.sauceForm {
+  display: flex;
+  flex-direction: column;
+}
