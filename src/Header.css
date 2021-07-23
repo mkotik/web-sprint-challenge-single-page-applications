@@ -50,4 +50,5 @@ nav div {
 .homeBtnWrap:hover,
 .helpBtnWrap:hover {
   background-color: #ff5964;
+  cursor: pointer;
 }
