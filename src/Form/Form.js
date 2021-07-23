@@ -26,6 +26,22 @@ function FormTop() {
   );
 }
 
+function NameForm(props) {
+  const { onChange, formData } = props;
+  return (
+    <div className="nameForm">
+      <input
+        onChange={onChange}
+        type="text"
+        name="name"
+        placeholder="What is your Name ?"
+        value={formData.name}
+        id="name-input"
+      />
+    </div>
+  );
+}
+
 function SizeForm(props) {
   const { onChange, formData } = props;
   return (
@@ -35,6 +51,7 @@ function SizeForm(props) {
         className="sizeSelect"
         name="size"
         onChange={onChange}
+        id="size-dropdown"
       >
         <option value="">Select</option>
         <option value="small">Small</option>
@@ -55,6 +72,7 @@ function SauceForm(props) {
           name="sauce"
           value="Original Red"
           onChange={onChange}
+          checked={formData.sauce === "Original Red"}
         />
         Original Red
       </label>
@@ -64,6 +82,7 @@ function SauceForm(props) {
           name="sauce"
           value="Garlic Ranch"
           onChange={onChange}
+          checked={formData.sauce === "Garlic Ranch"}
         />
         Garlic Ranch
       </label>
@@ -73,6 +92,7 @@ function SauceForm(props) {
           name="sauce"
           value="BBQ Sauce"
           onChange={onChange}
+          checked={formData.sauce === "BBQ Sauce"}
         />
         BBQ Sauce
       </label>
@@ -82,6 +102,7 @@ function SauceForm(props) {
           name="sauce"
           value="Spinach Alfredo"
           onChange={onChange}
+          checked={formData.sauce === "Spinach Alfredo"}
         />
         Spinach Alfredo
       </label>
@@ -106,15 +127,16 @@ const toppings = [
 ];
 
 function ToppingInput(props) {
-  const { topping, onChange } = props;
+  const { topping, onChange, formData } = props;
   return (
     <div className="toppingInput">
       <label>
         <input
+          className="toppingInputBox"
           onChange={onChange}
           type="checkbox"
           name={topping.toLowerCase()}
-          value={false}
+          data-name={topping.toLowerCase()}
         />
         {topping}
       </label>
@@ -123,18 +145,18 @@ function ToppingInput(props) {
 }
 
 function ToppingsForm(props) {
-  const { onChange } = props;
+  const { onChange, formData } = props;
   return (
     <div className="toppingsForm">
-      {toppings.map((topping) => (
-        <ToppingInput onChange={onChange} topping={topping} />
+      {toppings.map((topping, i) => (
+        <ToppingInput data-key={i} onChange={onChange} topping={topping} />
       ))}
     </div>
   );
 }
 
 function SubstituteForm(props) {
-  const { onChange } = props;
+  const { onChange, formData } = props;
   return (
     <div className="substituteForm">
       <label>
@@ -142,7 +164,7 @@ function SubstituteForm(props) {
           onChange={onChange}
           type="checkbox"
           name="glutenFreeCrust"
-          value={false}
+          checked={formData.glutenFreeCrust}
         />{" "}
         Gluten Free Crust (+ $1.00)
       </label>
@@ -151,7 +173,7 @@ function SubstituteForm(props) {
 }
 
 function SpecialForm(props) {
-  const { onChange } = props;
+  const { onChange, formData } = props;
   return (
     <div className="specialForm">
       <input
@@ -159,25 +181,27 @@ function SpecialForm(props) {
         type="text"
         name="specialInstructions"
         placeholder="Anything else you'd like to add?"
+        value={formData.specialInstructions}
+        id="special-text"
       />
     </div>
   );
 }
 
 function BottomTab(props) {
-  const { onChange } = props;
+  const { onChange, isDisabled } = props;
   return (
     <div className="bottomTab">
       <div className="bottomTabLeft">
         <input
-          placeholder="Quantity"
+          placeholder="Quantity (required)"
           onChange={onChange}
           name="quantity"
           type="number"
         />
       </div>
       <div className="bottomTabRight">
-        <button>
+        <button disabled={isDisabled} id="order-button">
           <h3 className="bottomTabText">Add to Order</h3>
           <h3 className="bottomTabPrice">$17.99</h3>
         </button>
@@ -186,11 +210,13 @@ function BottomTab(props) {
   );
 }
 export default function Form(props) {
-  const { onChange, onSubmit, formData } = props;
+  const { onChange, onSubmit, formData, isDisabled } = props;
   return (
     <div className="formBackground">
-      <form className="formWrap" onSubmit={onSubmit}>
+      <form className="formWrap" onSubmit={onSubmit} id="pizza-form">
         <FormTop />
+        <SectionDivider mainText={"Name"} subText={"Required"} />
+        <NameForm formData={formData} onChange={onChange} />
         <SectionDivider mainText={"Choice of Size"} subText={"Required"} />
         <SizeForm onChange={onChange} formData={formData} />
         <SectionDivider mainText={"Choice of Sauce"} subText={"Required"} />
@@ -204,7 +230,7 @@ export default function Form(props) {
         <SubstituteForm onChange={onChange} formData={formData} />
         <SectionDivider mainText={"Special Instructions"} subText={""} />
         <SpecialForm onChange={onChange} formData={formData} />
-        <BottomTab onChange={onChange} />
+        <BottomTab onChange={onChange} isDisabled={isDisabled} />
       </form>
     </div>
   );

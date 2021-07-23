@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Link } from "react-router-dom";
 import Homepage from "./Homepage/Homepage";
 import Header from "./Header";
 import Form from "./Form/Form";
+import formSchema from "./Form/Validation/formSchema";
+import * as yup from "yup";
 
 const initialFormData = {
+  name: "",
   size: "",
   sauce: "",
   glutenFreeCrust: false,
@@ -24,31 +27,73 @@ const initialFormData = {
   ["roasted garlic"]: false,
   ["three cheese"]: false,
   ["extra cheese"]: false,
+  lessThan10Top: true,
+};
+
+const unCheckToppings = function () {
+  const toppingInputs = document.querySelectorAll(".toppingInputBox");
+  toppingInputs.forEach((topping) => {
+    topping.checked = false;
+  });
 };
 
 const App = () => {
-  // console.log(initialFormData["canadian bacon"]);
+  const [errors, setErrors] = useState(initialFormData);
+  const [isDisabled, setIsDisabled] = useState(true);
   const [orderedPizzas, setOrderedPizzas] = useState([]);
   const [formData, setFormData] = useState(initialFormData);
 
   const onChange = function (e) {
     const { value, name, checked } = e.target;
-    const valueToUse = e.target.type === "checkbox" ? checked : value;
-    console.log(valueToUse);
-    // console.log(name);
-    // console.log(e.target.checked);
+    let valueToUse = e.target.type === "checkbox" ? checked : value;
+    if (e.target.type === "number") valueToUse = Number(valueToUse);
+    // tooManyToppings();
     const newFormData = { ...formData };
     newFormData[name] = valueToUse;
+    setFormErrors(name, valueToUse);
     setFormData(newFormData);
-    // console.log(formData);
   };
 
   const onSubmit = function (e) {
     e.preventDefault();
     setOrderedPizzas([formData, ...orderedPizzas]);
     setFormData(initialFormData);
+    unCheckToppings();
   };
-  console.log(formData);
+
+  const setFormErrors = (name, value) => {
+    yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then(() => setErrors({ ...errors, [name]: "" }))
+      .catch((err) => setErrors({ ...errors, [name]: err.errors[0] }));
+  };
+
+  // This function doesnt work and im running low on time. It should disable the add to order button when there are more than 10 toppings selected
+  // const tooManyToppings = function () {
+  //   const toppings = Array.from(document.querySelectorAll(".toppingInputBox"));
+  //   const checkedToppings = toppings.filter((cur) => cur.checked === true);
+  //   // toppings.filter((cur) => cur.checked === true);
+  //   console.log(checkedToppings.length);
+  //   if (checkedToppings.length > 10) {
+  //     console.log("setting to false");
+  //     const newData = { ...formData };
+  //     newData["lessThan10Top"] = false;
+  //     setFormData({ newData });
+  //     console.log(formData);
+  //   } else {
+  //     console.log("setting to true");
+  //     const newData = { ...formData };
+  //     newData["lessThan10Top"] = true;
+  //     setFormData({ ...newData });
+  //     console.log(formData);
+  //   }
+  // };
+
+  useEffect(() => {
+    formSchema.isValid(formData).then((valid) => setIsDisabled(!valid));
+  }, [formData]);
+
   console.log(orderedPizzas);
   return (
     <>
@@ -57,7 +102,12 @@ const App = () => {
         <Homepage />
       </Route>
       <Route path="/pizza">
-        <Form onChange={onChange} onSubmit={onSubmit} formData={formData} />
+        <Form
+          onChange={onChange}
+          onSubmit={onSubmit}
+          formData={formData}
+          isDisabled={isDisabled}
+        />
       </Route>
     </>
   );

@@ -52,6 +52,18 @@
   padding-bottom: 0.5rem;
 }
 
+.nameForm {
+  padding-left: 2rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+}
+
+.nameForm input {
+  width: 36rem;
+  height: 2rem;
+}
+
 .sizeForm {
   height: 7vh;
   display: flex;
