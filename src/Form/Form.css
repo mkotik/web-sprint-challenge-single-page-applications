@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   font-family: "Acme", sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .formImgWrap {
   width: 100%;
@@ -46,8 +48,97 @@
 .sectionDividerWrap {
   background-color: rgb(192, 191, 191);
   padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.sizeForm {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.sizeSelect {
+  width: 10rem;
 }
 .sauceForm {
+  padding-left: 2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   display: flex;
   flex-direction: column;
+}
+
+.sauceForm label {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.sauceForm input {
+  margin-right: 10px;
+}
+
+.toppingInput {
+  width: 50%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.toppingsForm {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem 2rem 0.2rem 2rem;
+}
+
+.toppingInput input {
+  margin-right: 10px;
+}
+
+.substituteForm {
+  height: 7vh;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.substituteForm input {
+  margin-right: 10px;
+}
+
+.specialForm {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.specialForm input {
+  width: 36rem;
+  height: 2rem;
+}
+
+.bottomTab {
+  background-color: rgb(192, 191, 191);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0.5rem 2rem 0.5rem 2rem; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.bottomTab button {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 3rem;
+  align-items: center;
+  font-family: "Acme", sans-serif;
+}
+
+.bottomTab input {
+  height: 2.7rem;
 }

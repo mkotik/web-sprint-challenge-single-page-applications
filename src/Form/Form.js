@@ -26,10 +26,10 @@ function FormTop() {
   );
 }
 
-function sizeForm() {
+function SizeForm() {
   return (
     <div className="sizeForm">
-      <select name="size">
+      <select className="sizeSelect" name="size">
         <option value="">Select</option>
         <option value="small">Small</option>
         <option value="medium">Medium</option>
@@ -41,7 +41,7 @@ function sizeForm() {
 
 function SauceForm() {
   return (
-    <form className="sauceForm">
+    <div className="sauceForm">
       <label>
         <input type="radio" name="sauce" value="Original Red" /> Original Red
       </label>
@@ -55,7 +55,7 @@ function SauceForm() {
         <input type="radio" name="sauce" value="Spinach Alfredo" /> Spinach
         Alfredo
       </label>
-    </form>
+    </div>
   );
 }
 const toppings = [
@@ -89,36 +89,34 @@ function ToppingInput(props) {
 
 function ToppingsForm() {
   return (
-    <form className="toppingsForm">
+    <div className="toppingsForm">
       {toppings.map((topping) => (
         <ToppingInput topping={topping} />
       ))}
-    </form>
+    </div>
   );
 }
 
 function SubstituteForm() {
   return (
-    <form>
+    <div className="substituteForm">
       <label>
         <input type="checkbox" name="glutenFreeCrus" value={false} /> Gluten
         Free Crust (+ $1.00)
       </label>
-    </form>
+    </div>
   );
 }
 
 function SpecialForm() {
   return (
-    <form>
-      <label>
-        <input
-          type="text"
-          name="specialInstructions"
-          placeholder="Anything else you'd like to add?"
-        />
-      </label>
-    </form>
+    <div className="specialForm">
+      <input
+        type="text"
+        name="specialInstructions"
+        placeholder="Anything else you'd like to add?"
+      />
+    </div>
   );
 }
 
@@ -143,6 +141,7 @@ export default function Form() {
       <form className="formWrap">
         <FormTop />
         <SectionDivider mainText={"Choice of Size"} subText={"Required"} />
+        <SizeForm />
         <SectionDivider mainText={"Choice of Sauce"} subText={"Required"} />
         <SauceForm />
         <SectionDivider mainText={"Add Toppings"} subText={"Choose up to 10"} />
