@@ -6,9 +6,10 @@
   padding-left: 10%;
   padding-right: 10%;
   font-family: "Acme", sans-serif;
+  height: 10vh;
 }
 
-.title {
+.headerTitle {
   color: #353535;
 }
 
