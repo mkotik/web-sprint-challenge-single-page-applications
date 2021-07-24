@@ -77,7 +77,26 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .pizzaBtnWrap {
-    display: none;
+  .btnText {
+    font-size: 6rem;
+  }
+  .wrap {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .btnText {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .btnText {
+    font-size: 2rem;
+  }
+
+  .wrap {
+    height: 15rem;
   }
 }

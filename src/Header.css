@@ -63,8 +63,17 @@ nav div {
 @media only screen and (max-width: 440px) {
   .headerWrap {
     flex-direction: column;
-    height: 15vh;
+    height: 5rem;
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  h1 {
+    text-align: center;
+  }
+  .headerWrap {
+    height: 10rem;
   }
 }
