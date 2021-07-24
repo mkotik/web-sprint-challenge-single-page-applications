@@ -53,9 +53,11 @@
 }
 
 .nameForm {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
   height: 7rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -69,6 +71,12 @@
   display: flex;
   align-items: center;
   padding-left: 2rem;
+  /* justify-content: center; */
+}
+
+.sizeError {
+  margin-left: 2rem;
+  transform: translateY(-0.5rem);
 }
 
 .sizeSelect {
@@ -141,7 +149,7 @@
   padding-right: 2rem;
 }
 
-.bottomTab button {
+. .bottomTab button {
   width: 20rem;
   display: flex;
   justify-content: space-between;
@@ -156,14 +164,32 @@
   height: 2.7rem;
 }
 
+.error {
+  margin-top: 1em;
+  color: red;
+  text-align: left;
+  /* display: none; */
+}
+
+.quantityError {
+  background-color: rgb(192, 191, 191);
+  margin-top: 0rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+}
+
 @media only screen and (max-width: 680px) {
   .formWrap {
     width: 100%;
     margin-top: 0px;
   }
 
+  .formHeader {
+    display: none;
+  }
+
   .formBackground {
-    padding-top: 0px;
+    padding: 0px;
   }
 
   .specialForm {

@@ -104,7 +104,7 @@ const App = () => {
     formSchema.isValid(formData).then((valid) => setIsDisabled(!valid));
   }, [formData]);
 
-  console.log(orderedPizzas);
+  console.log(errors);
   return (
     <>
       <Header />
@@ -117,6 +117,7 @@ const App = () => {
           onSubmit={onSubmit}
           formData={formData}
           isDisabled={isDisabled}
+          errors={errors}
         />
       </Route>
       <Route path="/submitted">
