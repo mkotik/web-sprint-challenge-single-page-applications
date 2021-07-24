@@ -5,6 +5,7 @@ import Header from "./Header";
 import Form from "./Form/Form";
 import formSchema from "./Form/Validation/formSchema";
 import * as yup from "yup";
+import axios from "axios";
 
 const initialFormData = {
   name: "",
@@ -59,6 +60,10 @@ const App = () => {
     setOrderedPizzas([formData, ...orderedPizzas]);
     setFormData(initialFormData);
     unCheckToppings();
+    axios
+      .post("https://reqres.in/api/orders")
+      .then(() => console.log("post was successful"))
+      .catch((err) => console.log(err));
   };
 
   const setFormErrors = (name, value) => {
