@@ -75,3 +75,20 @@ img {
   width: 100%;
   height: 100%;
 }
+
+@media only screen and (max-width: 800px) {
+  .cardWrapWrap {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 610px) {
+  .cardWrapWrap {
+    width: 100%;
+  }
+
+  .imgWrap {
+    width: 100%;
+    aspect-ratio: 1.3;
+    overflow: ;
+  }
+}

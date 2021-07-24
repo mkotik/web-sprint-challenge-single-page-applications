@@ -57,3 +57,27 @@
   /* background-color: red; */
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 630px) {
+  .mainTextWrap {
+    display: none;
+  }
+  .contentWrap {
+    width: 80%;
+    /* background-color: blue; */
+    justify-content: center;
+  }
+  .pizzaBtnWrap {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .btnText {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .pizzaBtnWrap {
+    display: none;
+  }
+}

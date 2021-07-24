@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0fd9469.chunk.css",
+    "main.js": "/static/js/main.6b8bc2da.chunk.js",
+    "main.js.map": "/static/js/main.6b8bc2da.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.19e2f565.js",
+    "runtime-main.js.map": "/static/js/runtime-main.19e2f565.js.map",
+    "static/js/2.c4845b29.chunk.js": "/static/js/2.c4845b29.chunk.js",
+    "static/js/2.c4845b29.chunk.js.map": "/static/js/2.c4845b29.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.d0fd9469.chunk.css.map": "/static/css/main.d0fd9469.chunk.css.map",
+    "static/js/2.c4845b29.chunk.js.LICENSE.txt": "/static/js/2.c4845b29.chunk.js.LICENSE.txt",
+    "static/media/Form.css": "/static/media/Pizza.bf28655b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.19e2f565.js",
+    "static/js/2.c4845b29.chunk.js",
+    "static/css/main.d0fd9469.chunk.css",
+    "static/js/main.6b8bc2da.chunk.js"
+  ]
+}
