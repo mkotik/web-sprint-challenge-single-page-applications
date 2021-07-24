@@ -1,6 +1,11 @@
 import React from "react";
 import "./Form.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const linkStyle = {
+  textDecoration: "none",
+};
 
 function SectionDivider(props) {
   const { mainText, subText } = props;

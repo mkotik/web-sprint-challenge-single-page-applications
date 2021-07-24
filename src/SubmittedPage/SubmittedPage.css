@@ -1,0 +1,38 @@
+.submittedPageWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  font-family: "Acme", sans-serif;
+  background: linear-gradient(#f2aa4cff, white);
+}
+.submittedHero {
+  width: 80%;
+  height: 70vh;
+  /* background-color: #ff5964; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.submittedLower {
+  margin-top: 4rem;
+  /* background-color: blue; */
+  /* height: 80vh; */
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.submittedLowerText {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.gifWrap {
+  width: 400px;
+  overflow: hidden;
+}

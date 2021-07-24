@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useHistory } from "react-router-dom";
 import Homepage from "./Homepage/Homepage";
 import Header from "./Header";
 import Form from "./Form/Form";
 import formSchema from "./Form/Validation/formSchema";
 import * as yup from "yup";
 import axios from "axios";
+import SubmittedPage from "./SubmittedPage/SubmittedPage.js";
 
 const initialFormData = {
   name: "",
@@ -43,6 +44,7 @@ const App = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [orderedPizzas, setOrderedPizzas] = useState([]);
   const [formData, setFormData] = useState(initialFormData);
+  const history = useHistory();
 
   const onChange = function (e) {
     const { value, name, checked } = e.target;
@@ -62,7 +64,10 @@ const App = () => {
     unCheckToppings();
     axios
       .post("https://reqres.in/api/orders")
-      .then(() => console.log("post was successful"))
+      .then(() => {
+        console.log("post was successful");
+        history.push("./submitted");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -113,6 +118,9 @@ const App = () => {
           formData={formData}
           isDisabled={isDisabled}
         />
+      </Route>
+      <Route path="/submitted">
+        <SubmittedPage />
       </Route>
     </>
   );
