@@ -6,6 +6,11 @@
   padding-top: 2rem;
   font-family: "Acme", sans-serif;
   background: linear-gradient(#f2aa4cff, white);
+  font-align: center;
+}
+
+.submittedTitle {
+  font-align: center;
 }
 .submittedHero {
   width: 80%;
@@ -15,6 +20,7 @@
   justify-content: center;
   align-items: center;
   font-size: 4rem;
+  text-align: center;
 }
 
 .submittedLower {
@@ -30,9 +36,20 @@
 .submittedLowerText {
   margin-bottom: 3rem;
   font-size: 2rem;
+  font-align: center;
 }
 
 .gifWrap {
   width: 400px;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 590px) {
+  .submittedTitle {
+    font-size: 4rem;
+  }
+
+  .submittedHero {
+    height: 10rem;
+  }
 }
