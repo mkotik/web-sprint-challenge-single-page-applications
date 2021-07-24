@@ -207,8 +207,8 @@ function BottomTab(props) {
       </div>
       <div className="bottomTabRight">
         <button disabled={isDisabled} id="order-button">
-          <h3 className="bottomTabText">Add to Order</h3>
-          <h3 className="bottomTabPrice">$17.99</h3>
+          <h3 className="bottomTabText">Add to Order </h3>
+          <h3 className="bottomTabPrice"> $17.99</h3>
         </button>
       </div>
     </div>
