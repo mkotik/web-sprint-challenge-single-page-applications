@@ -193,6 +193,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 0px;
+  }
+
+  .formImgWrap {
+    height: 20rem;
   }
 }
 
